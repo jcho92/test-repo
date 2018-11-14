@@ -29,7 +29,7 @@ var storageRef = firebase.storage().ref();
 // only selects the first file selected by the user 
 
 // display results function 
-var displayResults = function (personImgUrl, marvelImgUrl, marvelName1) {
+var displayResults = function (personImgUrl, marvelImgUrl, marvelName) {
     console.log('calling display results');
     var marvelImgDiv = document.getElementById('marvelDiv');
     var marvelImgTag = document.createElement('img');
@@ -41,11 +41,11 @@ var displayResults = function (personImgUrl, marvelImgUrl, marvelName1) {
     personImgTag.classList = "resize";
     marvelImgDiv.append(marvelImgTag);
     personImgDiv.append(personImgTag);
-    console.log(marvelName1)
+    console.log(marvelName)
 
     var marvelCharName = document.createElement('p')
 
-    marvelCharName.html = marvelName1;
+    marvelCharName.html = marvelName;
     marvelCharName.classList = "marvelCharacterName";
     marvelImgDiv.append(marvelCharName)
     // hide the main image 
