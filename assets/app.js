@@ -42,7 +42,8 @@ var displayResults = function (personImgUrl, marvelImgUrl, marvelName) {
     marvelImgDiv.append(marvelImgTag);
     personImgDiv.append(personImgTag);
 
-    var marvelCharName = document.getElementById('marvelDiv')
+    var marvelCharName = document.createElement('p')
+
     marvelCharName.html = marvelName;
     marvelCharName.classList = "marvelCharacterName";
     marvelImgDiv.append(marvelCharName)
