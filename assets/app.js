@@ -31,7 +31,7 @@ $('body').on('load', 'img', function () {
 
 // display results function 
 // shows image elements returned by APIs
-var displayResults = function (personImgUrl, marvelImgUrl) {
+var displayResults = function (personImgUrl, marvelImgUrl, marvelName) {
     console.log('calling display results');
     var marvelImgDiv = document.getElementById('marvelDiv');
     var marvelImgTag = document.createElement('img');
