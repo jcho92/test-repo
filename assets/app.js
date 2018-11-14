@@ -45,7 +45,7 @@ var displayResults = function (personImgUrl, marvelImgUrl, marvelName) {
 
     var marvelCharName = document.createElement('p')
 
-    marvelCharName.html = marvelName;
+    marvelCharName.innerHTML = marvelName;
     marvelCharName.classList = "marvelCharacterName";
     marvelImgDiv.append(marvelCharName)
     // hide the main image 
