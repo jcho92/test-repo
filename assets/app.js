@@ -31,25 +31,18 @@ $('body').on('load', 'img', function () {
 
 // display results function 
 // shows image elements returned by APIs
-var displayResults = function (personImgUrl, marvelImgUrl, marvelName) {
+var displayResults = function (personImgUrl, marvelImgUrl) {
     console.log('calling display results');
     var marvelImgDiv = document.getElementById('marvelDiv');
     var marvelImgTag = document.createElement('img');
     var personImgDiv = document.getElementById('personDiv');
     var personImgTag = document.createElement('img');
     marvelImgTag.src = marvelImgUrl;
-    marvelImgTag.classList = "resize d-none";
+    marvelImgTag.classList = "resize";
     personImgTag.src = personImgUrl;
-    personImgTag.classList = "resize d-none";
+    personImgTag.classList = "resize";
     marvelImgDiv.append(marvelImgTag);
     personImgDiv.append(personImgTag);
-    console.log(marvelName)
-
-    var marvelCharName = document.createElement('p')
-
-    marvelCharName.innerHTML = marvelName;
-    marvelCharName.classList = "marvelCharacterName";
-    marvelImgDiv.append(marvelCharName)
     // hide the main image 
     document.getElementById('mainSplashImg').classList = "marveluniverse d-none";
     // kill the loader
@@ -113,11 +106,11 @@ function marvelGen(imgData) {
                 var urlPath = response.data.results[0].thumbnail.path;
                 var urlExtension = response.data.results[0].thumbnail.extension;
                 var marvelImage = urlPath + "." + urlExtension;
-                var marvelName = response.data.results[0].name;
+                // var marvelName = response.data.results[0].name;
                 // var marvelNameDiv = ("<p>");
                 // marvelNameDiv.attr("class" , "name")
                 // $("#marvelImg").append(marvelName)
-                displayResults(userImgUrl, marvelImage, marvelName);
+                displayResults(userImgUrl, marvelImage);
             },function (err) {
                 console.log('There was an error:');
                 console.log(err.responseJSON);
